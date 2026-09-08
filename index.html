@@ -1,1 +1,947 @@
-# Friend-Vote-2026
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friend Vote 2026</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:linear-gradient(
+    180deg,
+    #9bd9da 0%,
+    #65b8ba 45%,
+    #d8eeee 100%
+  );
+  font-family:Arial,Helvetica,sans-serif;
+  color:white;
+}
+
+.page{
+  width:94%;
+  max-width:720px;
+  margin:auto;
+  padding-bottom:30px;
+}
+
+/* HEADER */
+
+.header{
+  text-align:center;
+  padding:25px 10px 20px;
+}
+
+.header h1{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:35px;
+  letter-spacing:3px;
+  font-weight:bold;
+  text-shadow:0 2px 8px rgba(0,0,0,.3);
+}
+
+.header p{
+  margin:8px 0 0;
+  font-size:10px;
+  letter-spacing:3px;
+}
+
+/* INFO */
+
+.info{
+  background:rgba(0,0,0,.25);
+  border-radius:15px;
+  padding:13px;
+  text-align:center;
+  margin-bottom:18px;
+  font-size:12px;
+  line-height:1.5;
+}
+
+/* TOP 1 */
+
+.top-card{
+  background:#030606;
+  border:2px solid rgba(255,255,255,.25);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(0,0,0,.35);
+  margin-bottom:18px;
+}
+
+.top-photo{
+  width:100%;
+  height:440px;
+  object-fit:cover;
+  display:block;
+}
+
+.top-content{
+  position:relative;
+  padding:15px 16px 20px;
+}
+
+.top-city{
+  font-size:27px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+.orange-line{
+  width:125px;
+  height:12px;
+  background:#ff6a3d;
+  border-radius:50%;
+  margin:13px 0 8px 20px;
+  transform:rotate(4deg);
+}
+
+.top-name{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:22px;
+  font-weight:bold;
+  text-align:center;
+  margin-top:8px;
+}
+
+.top-rank{
+  position:absolute;
+  right:17px;
+  top:10px;
+  width:78px;
+  height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Georgia,serif;
+  font-size:43px;
+  font-weight:bold;
+  color:#ff6039;
+  background:rgba(0,0,0,.25);
+  border-radius:50%;
+}
+
+.top-actions{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  margin-top:15px;
+}
+
+.vote-btn{
+  border:0;
+  background:white;
+  color:#222;
+  min-width:205px;
+  padding:13px 35px;
+  border-radius:30px;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.points{
+  font-size:17px;
+  font-weight:bold;
+  white-space:nowrap;
+}
+
+.point-icon{
+  color:#ff3446;
+  font-size:19px;
+}
+
+/* OTHER CARDS */
+
+.list-card{
+  display:flex;
+  align-items:stretch;
+  background:#030606;
+  border:2px solid rgba(255,255,255,.22);
+  border-radius:17px;
+  overflow:hidden;
+  margin:13px 0;
+  min-height:205px;
+  box-shadow:0 6px 20px rgba(0,0,0,.3);
+}
+
+.list-photo{
+  width:205px;
+  min-width:205px;
+  height:205px;
+  object-fit:cover;
+}
+
+.list-content{
+  flex:1;
+  padding:25px 10px 15px 20px;
+  position:relative;
+  min-width:0;
+}
+
+.list-city{
+  font-size:22px;
+  font-weight:bold;
+  line-height:1.15;
+}
+
+.list-line{
+  width:95px;
+  height:10px;
+  background:#ff6a3d;
+  border-radius:50%;
+  margin:14px 0 9px 15px;
+  transform:rotate(4deg);
+}
+
+.list-name{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:16px;
+  font-weight:bold;
+  line-height:1.2;
+}
+
+.list-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:25px;
+}
+
+.small-vote{
+  border:0;
+  background:white;
+  color:#222;
+  padding:11px 30px;
+  border-radius:27px;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.small-points{
+  font-size:15px;
+  font-weight:bold;
+  white-space:nowrap;
+}
+
+.rank{
+  width:62px;
+  min-width:62px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Georgia,serif;
+  font-size:38px;
+  font-weight:bold;
+  color:#e7e7e7;
+}
+
+/* BOTTOM */
+
+.bottom-box{
+  background:rgba(18,40,41,.7);
+  border-radius:15px;
+  margin-top:22px;
+  padding:20px 15px;
+  text-align:center;
+  font-size:15px;
+  line-height:1.7;
+}
+
+.footer{
+  text-align:center;
+  padding:32px 10px 5px;
+}
+
+.footer h2{
+  margin:0;
+  font-family:Georgia,serif;
+  font-size:23px;
+}
+
+.footer p{
+  margin:8px 0 0;
+  font-size:11px;
+  opacity:.75;
+}
+
+/* ADMIN LOCK */
+
+.admin-lock{
+  text-align:center;
+  padding:20px 0 5px;
+}
+
+.lock-btn{
+  border:0;
+  background:transparent;
+  color:white;
+  font-size:17px;
+  opacity:.55;
+  cursor:pointer;
+}
+
+/* ADMIN */
+
+.admin-panel{
+  display:none;
+  background:white;
+  color:#244b52;
+  border-radius:16px;
+  padding:18px;
+  margin-top:10px;
+}
+
+.admin-panel input[type="text"],
+.admin-panel input[type="number"],
+.admin-panel input[type="password"]{
+  width:100%;
+  padding:11px;
+  margin:5px 0;
+  border:1px solid #c5dfe3;
+  border-radius:9px;
+}
+
+.file-label{
+  display:block;
+  margin-top:7px;
+  padding:12px;
+  border:2px dashed #9bcbd0;
+  border-radius:10px;
+  text-align:center;
+  cursor:pointer;
+  color:#4b8188;
+  font-size:13px;
+}
+
+.file-label input{
+  display:none;
+}
+
+.file-preview{
+  width:100%;
+  max-height:220px;
+  object-fit:contain;
+  margin-top:10px;
+  border-radius:9px;
+  display:none;
+}
+
+.admin-btn{
+  border:0;
+  background:#3e9295;
+  color:white;
+  padding:11px 17px;
+  border-radius:9px;
+  cursor:pointer;
+  margin-top:6px;
+}
+
+.editor{
+  display:none;
+  margin-top:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .header h1{
+    font-size:29px;
+  }
+
+  .top-photo{
+    height:390px;
+  }
+
+  .top-city{
+    font-size:25px;
+  }
+
+  .list-card{
+    min-height:165px;
+  }
+
+  .list-photo{
+    width:125px;
+    min-width:125px;
+    height:165px;
+  }
+
+  .list-content{
+    padding:20px 5px 10px 14px;
+  }
+
+  .list-city{
+    font-size:17px;
+  }
+
+  .list-name{
+    font-size:14px;
+  }
+
+  .list-actions{
+    gap:8px;
+    margin-top:20px;
+  }
+
+  .small-vote{
+    padding:9px 20px;
+    font-size:13px;
+  }
+
+  .small-points{
+    font-size:12px;
+  }
+
+  .rank{
+    width:42px;
+    min-width:42px;
+    font-size:30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC FILE -->
+<audio id="music" loop preload="auto">
+  <source
+    src="VID_20260908_211144_780.mp4"
+    type="video/mp4">
+</audio>
+
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>FRIEND VOTE 2026</h1>
+    <p>INTERNATIONAL FRIENDSHIP VOTING</p>
+  </div>
+
+
+  <!-- VOTE INFORMATION -->
+  <div class="info">
+    <strong>1 VOTE = 10 POINTS</strong>
+    <br>
+    Highest Voting Points will become TOP 1
+  </div>
+
+
+  <!-- TOP 1 -->
+  <div id="topOne"></div>
+
+
+  <!-- OTHER CONTESTANTS -->
+  <div id="contestants"></div>
+
+
+  <!-- BOTTOM -->
+  <div class="bottom-box">
+    Vote for your favourite friend
+    <br>
+    Every vote counts
+  </div>
+
+
+  <div class="footer">
+    <h2>Vote Your Favourite Friend</h2>
+    <p>Friend Vote 2026</p>
+  </div>
+
+
+  <!-- ADMIN LOCK ONLY -->
+  <div class="admin-lock">
+    <button
+      class="lock-btn"
+      onclick="openAdmin()">
+      🔒
+    </button>
+  </div>
+
+
+  <!-- ADMIN PANEL -->
+  <div
+    class="admin-panel"
+    id="adminPanel">
+
+    <input
+      type="password"
+      id="pin"
+      placeholder="PIN">
+
+    <button
+      class="admin-btn"
+      onclick="loginAdmin()">
+      Enter
+    </button>
+
+
+    <div
+      class="editor"
+      id="editor">
+
+      <hr>
+
+      <input
+        type="number"
+        id="number"
+        placeholder="Contestant Number">
+
+      <input
+        type="text"
+        id="city"
+        placeholder="City Name">
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Contestant Name">
+
+      <input
+        type="number"
+        id="pointsInput"
+        placeholder="Points">
+
+
+      <!-- CHOOSE PHOTO FILE -->
+      <label class="file-label">
+
+        📁 Choose Contestant Photo
+
+        <input
+          type="file"
+          id="photoFile"
+          accept="image/*"
+          onchange="previewPhoto(event)">
+
+      </label>
+
+
+      <img
+        id="preview"
+        class="file-preview">
+
+
+      <button
+        class="admin-btn"
+        onclick="saveContestant()">
+        Save Changes
+      </button>
+
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   CONTESTANTS
+========================= */
+
+let defaultContestants = [
+
+  {
+    name:"Contestant 1",
+    city:"SPAIN",
+    photo:"friend1.jpg",
+    points:0
+  },
+
+  {
+    name:"Contestant 2",
+    city:"SOUTH AFRICA",
+    photo:"friend2.jpg",
+    points:0
+  },
+
+  {
+    name:"Contestant 3",
+    city:"MYANMAR",
+    photo:"friend3.jpg",
+    points:0
+  },
+
+  {
+    name:"Contestant 4",
+    city:"THAILAND",
+    photo:"friend4.jpg",
+    points:0
+  },
+
+  {
+    name:"Contestant 5",
+    city:"PHILIPPINES",
+    photo:"friend5.jpg",
+    points:0
+  },
+
+  {
+    name:"Contestant 6",
+    city:"INDONESIA",
+    photo:"friend6.jpg",
+    points:0
+  }
+
+];
+
+
+/* LOAD */
+
+let saved =
+  localStorage.getItem("friendVote2026");
+
+let contestants =
+  saved
+  ? JSON.parse(saved)
+  : defaultContestants;
+
+
+/* SAVE */
+
+function saveData(){
+
+  localStorage.setItem(
+    "friendVote2026",
+    JSON.stringify(contestants)
+  );
+
+}
+
+
+/* DISPLAY */
+
+function displayContestants(){
+
+  contestants.sort(function(a,b){
+    return b.points-a.points;
+  });
+
+  saveData();
+
+  let topBox =
+    document.getElementById("topOne");
+
+  let listBox =
+    document.getElementById("contestants");
+
+
+  if(contestants.length===0){
+    topBox.innerHTML="";
+    listBox.innerHTML="";
+    return;
+  }
+
+
+  /* TOP 1 */
+
+  let top=contestants[0];
+
+  topBox.innerHTML=`
+
+    <div class="top-card">
+
+      <img
+        class="top-photo"
+        src="${top.photo}"
+        alt="${top.name}">
+
+      <div class="top-content">
+
+        <div class="top-city">
+          ${top.city}
+        </div>
+
+        <div class="orange-line"></div>
+
+        <div class="top-name">
+          ${top.name}
+        </div>
+
+        <div class="top-rank">
+          1
+        </div>
+
+        <div class="top-actions">
+
+          <button
+            class="vote-btn"
+            onclick="vote(0)">
+            Vote
+          </button>
+
+          <div class="points">
+
+            ${top.points}
+
+            <span class="point-icon">Ⓟ</span>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  `;
+
+
+  /* OTHER CONTESTANTS */
+
+  listBox.innerHTML="";
+
+
+  for(let i=1;i<contestants.length;i++){
+
+    let person=contestants[i];
+
+    listBox.innerHTML += `
+
+      <div class="list-card">
+
+        <img
+          class="list-photo"
+          src="${person.photo}"
+          alt="${person.name}">
+
+        <div class="list-content">
+
+          <div class="list-city">
+            ${person.city}
+          </div>
+
+          <div class="list-line"></div>
+
+          <div class="list-name">
+            ${person.name}
+          </div>
+
+          <div class="list-actions">
+
+            <button
+              class="small-vote"
+              onclick="vote(${i})">
+              Vote
+            </button>
+
+            <div class="small-points">
+
+              ${person.points}
+
+              <span class="point-icon">Ⓟ</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="rank">
+          ${i+1}
+        </div>
+
+      </div>
+    `;
+  }
+
+}
+
+
+/* 1 VOTE = 10 POINTS */
+
+function vote(index){
+
+  contestants[index].points += 10;
+
+  displayContestants();
+
+}
+
+
+/* ADMIN */
+
+function openAdmin(){
+
+  let panel =
+    document.getElementById("adminPanel");
+
+  if(panel.style.display==="block"){
+
+    panel.style.display="none";
+
+  }else{
+
+    panel.style.display="block";
+
+  }
+
+}
+
+
+function loginAdmin(){
+
+  let pin =
+    document.getElementById("pin").value;
+
+  if(pin==="2013"){
+
+    document.getElementById(
+      "editor"
+    ).style.display="block";
+
+  }else{
+
+    alert("Incorrect PIN");
+
+  }
+
+}
+
+
+/* PHOTO FILE */
+
+let selectedPhotoData="";
+
+
+function previewPhoto(event){
+
+  let file =
+    event.target.files[0];
+
+  if(!file){
+    return;
+  }
+
+  let reader =
+    new FileReader();
+
+  reader.onload=function(e){
+
+    selectedPhotoData=e.target.result;
+
+    let preview =
+      document.getElementById("preview");
+
+    preview.src=selectedPhotoData;
+
+    preview.style.display="block";
+
+  };
+
+  reader.readAsDataURL(file);
+
+}
+
+
+/* ADMIN SAVE */
+
+function saveContestant(){
+
+  let number =
+    parseInt(
+      document.getElementById("number").value
+    )-1;
+
+
+  if(
+    isNaN(number) ||
+    number<0 ||
+    number>=contestants.length
+  ){
+
+    alert("Contestant not found");
+
+    return;
+
+  }
+
+
+  let city =
+    document.getElementById("city").value;
+
+  let name =
+    document.getElementById("name").value;
+
+  let points =
+    document.getElementById("pointsInput").value;
+
+
+  if(city!==""){
+    contestants[number].city=city;
+  }
+
+  if(name!==""){
+    contestants[number].name=name;
+  }
+
+  if(points!==""){
+    contestants[number].points=parseInt(points);
+  }
+
+  if(selectedPhotoData!==""){
+    contestants[number].photo=selectedPhotoData;
+  }
+
+
+  saveData();
+
+  displayContestants();
+
+  alert("Saved successfully!");
+
+}
+
+
+/* MUSIC */
+
+let music =
+  document.getElementById("music");
+
+
+/*
+  Try to start automatically.
+  Browser autoplay rules may block
+  sound until the user interacts.
+*/
+
+window.addEventListener("load",function(){
+
+  music.play().catch(function(){});
+
+});
+
+
+/*
+  If autoplay is blocked,
+  start after the first tap anywhere.
+*/
+
+document.addEventListener(
+  "click",
+  function(){
+
+    if(music.paused){
+      music.play().catch(function(){});
+    }
+
+  },
+  {once:true}
+);
+
+
+/* START */
+
+displayContestants();
+
+</script>
+
+</body>
+</html>
