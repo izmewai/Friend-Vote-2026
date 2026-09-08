@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Friend Vote 2026</title>
 
 <style>
@@ -12,250 +13,222 @@
 
 body{
   margin:0;
-  background:linear-gradient(
-    180deg,
-    #9bd9da 0%,
-    #65b8ba 45%,
-    #d8eeee 100%
-  );
   font-family:Arial,Helvetica,sans-serif;
-  color:white;
+  color:#fff;
+  background:
+    linear-gradient(180deg,#5bb9e8 0%,#258bd0 48%,#075aa5 100%);
+  min-height:100vh;
 }
 
 .page{
   width:94%;
-  max-width:720px;
+  max-width:760px;
   margin:auto;
-  padding-bottom:30px;
+  padding-bottom:40px;
 }
 
 /* HEADER */
 
 .header{
   text-align:center;
-  padding:25px 10px 20px;
+  padding:30px 10px 20px;
 }
 
 .header h1{
   margin:0;
   font-family:Georgia,"Times New Roman",serif;
-  font-size:35px;
+  font-size:38px;
   letter-spacing:3px;
-  font-weight:bold;
-  text-shadow:0 2px 8px rgba(0,0,0,.3);
+  text-shadow:0 3px 8px rgba(0,0,0,.3);
 }
 
 .header p{
   margin:8px 0 0;
-  font-size:10px;
+  font-size:11px;
   letter-spacing:3px;
+  opacity:.9;
 }
 
 /* INFO */
 
 .info{
-  background:rgba(0,0,0,.25);
+  background:rgba(0,50,100,.32);
+  border:1px solid rgba(255,255,255,.25);
   border-radius:15px;
-  padding:13px;
+  padding:14px;
   text-align:center;
-  margin-bottom:18px;
-  font-size:12px;
-  line-height:1.5;
+  margin-bottom:20px;
+  font-size:13px;
 }
 
 /* TOP 1 */
 
 .top-card{
-  background:#030606;
-  border:2px solid rgba(255,255,255,.25);
-  border-radius:18px;
+  background:#06121b;
+  border-radius:20px;
   overflow:hidden;
-  box-shadow:0 8px 25px rgba(0,0,0,.35);
-  margin-bottom:18px;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
 .top-photo{
   width:100%;
-  height:440px;
+  height:430px;
   object-fit:cover;
   display:block;
 }
 
 .top-content{
   position:relative;
-  padding:15px 16px 20px;
+  padding:18px;
 }
 
 .top-city{
-  font-size:27px;
+  font-size:25px;
   font-weight:bold;
-  letter-spacing:1px;
 }
 
-.orange-line{
-  width:125px;
-  height:12px;
-  background:#ff6a3d;
+.orange-line,
+.list-line{
+  width:105px;
+  height:9px;
+  background:#ff7048;
   border-radius:50%;
-  margin:13px 0 8px 20px;
   transform:rotate(4deg);
+  margin:12px 0;
 }
 
 .top-name{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:22px;
-  font-weight:bold;
+  font-family:Georgia,serif;
   text-align:center;
-  margin-top:8px;
+  font-size:23px;
+  font-weight:bold;
 }
 
 .top-rank{
   position:absolute;
-  right:17px;
-  top:10px;
-  width:78px;
-  height:78px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:Georgia,serif;
-  font-size:43px;
-  font-weight:bold;
-  color:#ff6039;
-  background:rgba(0,0,0,.25);
+  right:18px;
+  top:15px;
+  width:65px;
+  height:65px;
   border-radius:50%;
-}
-
-.top-actions{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:15px;
-  margin-top:15px;
-}
-
-.vote-btn{
-  border:0;
-  background:white;
-  color:#222;
-  min-width:205px;
-  padding:13px 35px;
-  border-radius:30px;
-  font-size:18px;
-  cursor:pointer;
-}
-
-.points{
-  font-size:17px;
-  font-weight:bold;
-  white-space:nowrap;
-}
-
-.point-icon{
-  color:#ff3446;
-  font-size:19px;
-}
-
-/* OTHER CARDS */
-
-.list-card{
-  display:flex;
-  align-items:stretch;
-  background:#030606;
-  border:2px solid rgba(255,255,255,.22);
-  border-radius:17px;
-  overflow:hidden;
-  margin:13px 0;
-  min-height:205px;
-  box-shadow:0 6px 20px rgba(0,0,0,.3);
-}
-
-.list-photo{
-  width:205px;
-  min-width:205px;
-  height:205px;
-  object-fit:cover;
-}
-
-.list-content{
-  flex:1;
-  padding:25px 10px 15px 20px;
-  position:relative;
-  min-width:0;
-}
-
-.list-city{
-  font-size:22px;
-  font-weight:bold;
-  line-height:1.15;
-}
-
-.list-line{
-  width:95px;
-  height:10px;
-  background:#ff6a3d;
-  border-radius:50%;
-  margin:14px 0 9px 15px;
-  transform:rotate(4deg);
-}
-
-.list-name{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:16px;
-  font-weight:bold;
-  line-height:1.2;
-}
-
-.list-actions{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-top:25px;
-}
-
-.small-vote{
-  border:0;
-  background:white;
-  color:#222;
-  padding:11px 30px;
-  border-radius:27px;
-  font-size:15px;
-  cursor:pointer;
-}
-
-.small-points{
-  font-size:15px;
-  font-weight:bold;
-  white-space:nowrap;
-}
-
-.rank{
-  width:62px;
-  min-width:62px;
+  background:#17445e;
   display:flex;
   align-items:center;
   justify-content:center;
   font-family:Georgia,serif;
   font-size:38px;
   font-weight:bold;
-  color:#e7e7e7;
+}
+
+.top-actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  margin-top:18px;
+}
+
+.vote-btn,
+.small-vote{
+  border:0;
+  background:#fff;
+  color:#12609a;
+  font-weight:bold;
+  cursor:pointer;
+  border-radius:30px;
+}
+
+.vote-btn{
+  min-width:190px;
+  padding:13px 30px;
+  font-size:17px;
+}
+
+.points{
+  font-weight:bold;
+  font-size:17px;
+}
+
+/* LIST */
+
+.list-card{
+  display:flex;
+  align-items:stretch;
+  background:#06121b;
+  border-radius:17px;
+  overflow:hidden;
+  margin:13px 0;
+  min-height:180px;
+  box-shadow:0 7px 20px rgba(0,0,0,.25);
+}
+
+.list-photo{
+  width:180px;
+  min-width:180px;
+  height:180px;
+  object-fit:cover;
+}
+
+.list-content{
+  flex:1;
+  padding:22px 14px 15px 18px;
+}
+
+.list-city{
+  font-size:19px;
+  font-weight:bold;
+}
+
+.list-name{
+  font-family:Georgia,serif;
+  font-size:15px;
+  font-weight:bold;
+  margin-bottom:18px;
+}
+
+.list-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.small-vote{
+  padding:10px 24px;
+  font-size:14px;
+}
+
+.small-points{
+  font-size:14px;
+  font-weight:bold;
+}
+
+.rank{
+  width:55px;
+  min-width:55px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Georgia,serif;
+  font-size:32px;
+  font-weight:bold;
 }
 
 /* BOTTOM */
 
 .bottom-box{
-  background:rgba(18,40,41,.7);
+  margin-top:25px;
+  padding:20px;
   border-radius:15px;
-  margin-top:22px;
-  padding:20px 15px;
   text-align:center;
+  background:rgba(0,55,105,.38);
   font-size:15px;
   line-height:1.7;
 }
 
 .footer{
   text-align:center;
-  padding:32px 10px 5px;
+  padding:30px 0 10px;
 }
 
 .footer h2{
@@ -264,87 +237,154 @@ body{
   font-size:23px;
 }
 
-.footer p{
-  margin:8px 0 0;
-  font-size:11px;
-  opacity:.75;
-}
-
-/* ADMIN LOCK */
+/* ADMIN */
 
 .admin-lock{
   text-align:center;
-  padding:20px 0 5px;
+  margin-top:15px;
 }
 
 .lock-btn{
   border:0;
-  background:transparent;
+  background:rgba(0,40,80,.3);
   color:white;
-  font-size:17px;
-  opacity:.55;
+  width:42px;
+  height:42px;
+  border-radius:50%;
   cursor:pointer;
+  font-size:18px;
 }
-
-/* ADMIN */
 
 .admin-panel{
   display:none;
-  background:white;
-  color:#244b52;
-  border-radius:16px;
-  padding:18px;
-  margin-top:10px;
+  margin-top:15px;
+  background:#fff;
+  color:#164b72;
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
-.admin-panel input[type="text"],
-.admin-panel input[type="number"],
-.admin-panel input[type="password"]{
+.admin-title{
+  text-align:center;
+  font-size:21px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.pin-box{
+  display:flex;
+  gap:8px;
+}
+
+.pin-box input{
+  flex:1;
+}
+
+.admin-input{
   width:100%;
   padding:11px;
   margin:5px 0;
-  border:1px solid #c5dfe3;
+  border:1px solid #b9d7e8;
   border-radius:9px;
+  outline:none;
+}
+
+.admin-input:focus{
+  border-color:#168dd0;
+}
+
+.admin-btn{
+  border:0;
+  background:#147fc0;
+  color:white;
+  padding:11px 18px;
+  border-radius:9px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.admin-btn.red{
+  background:#dc4b4b;
+}
+
+.admin-btn.green{
+  background:#159b69;
+}
+
+.editor{
+  display:none;
+  margin-top:20px;
+}
+
+.admin-card{
+  background:#edf8ff;
+  border:1px solid #c7e4f4;
+  border-radius:14px;
+  padding:14px;
+  margin:12px 0;
+}
+
+.admin-card-title{
+  font-weight:bold;
+  margin-bottom:10px;
+  color:#075b91;
+}
+
+.admin-photo{
+  width:80px;
+  height:80px;
+  object-fit:cover;
+  border-radius:10px;
+  display:block;
+  margin-bottom:10px;
 }
 
 .file-label{
   display:block;
-  margin-top:7px;
-  padding:12px;
-  border:2px dashed #9bcbd0;
-  border-radius:10px;
+  background:#dff2ff;
+  border:2px dashed #79bde2;
+  color:#126796;
   text-align:center;
+  padding:11px;
+  border-radius:9px;
   cursor:pointer;
-  color:#4b8188;
-  font-size:13px;
+  margin:7px 0;
 }
 
 .file-label input{
   display:none;
 }
 
-.file-preview{
-  width:100%;
-  max-height:220px;
-  object-fit:contain;
+.new-box{
+  background:#e8f8ff;
+  border:2px solid #9ed5ef;
+  border-radius:15px;
+  padding:15px;
+  margin-top:20px;
+}
+
+.new-title{
+  font-size:19px;
+  font-weight:bold;
+  margin-bottom:10px;
+  color:#075b91;
+}
+
+.preview{
+  width:100px;
+  height:100px;
+  object-fit:cover;
+  border-radius:10px;
+  display:none;
+  margin:8px 0;
+}
+
+.admin-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
   margin-top:10px;
-  border-radius:9px;
-  display:none;
-}
-
-.admin-btn{
-  border:0;
-  background:#3e9295;
-  color:white;
-  padding:11px 17px;
-  border-radius:9px;
-  cursor:pointer;
-  margin-top:6px;
-}
-
-.editor{
-  display:none;
-  margin-top:15px;
 }
 
 /* MOBILE */
@@ -359,40 +399,32 @@ body{
     height:390px;
   }
 
-  .top-city{
-    font-size:25px;
-  }
-
   .list-card{
-    min-height:165px;
+    min-height:155px;
   }
 
   .list-photo{
-    width:125px;
-    min-width:125px;
-    height:165px;
+    width:120px;
+    min-width:120px;
+    height:155px;
   }
 
   .list-content{
-    padding:20px 5px 10px 14px;
+    padding:18px 7px 10px 13px;
   }
 
   .list-city{
-    font-size:17px;
+    font-size:16px;
   }
 
   .list-name{
-    font-size:14px;
-  }
-
-  .list-actions{
-    gap:8px;
-    margin-top:20px;
+    font-size:13px;
+    margin-bottom:13px;
   }
 
   .small-vote{
-    padding:9px 20px;
-    font-size:13px;
+    padding:9px 17px;
+    font-size:12px;
   }
 
   .small-points{
@@ -400,38 +432,42 @@ body{
   }
 
   .rank{
-    width:42px;
-    min-width:42px;
-    font-size:30px;
+    width:38px;
+    min-width:38px;
+    font-size:27px;
   }
+
+  .top-actions{
+    gap:9px;
+  }
+
+  .vote-btn{
+    min-width:150px;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- MUSIC FILE -->
+<!-- MUSIC -->
 <audio id="music" loop preload="auto">
-  <source
-    src="VID_20260908_211144_780.mp4"
-    type="video/mp4">
+  <source src="VID_20260908_211144_780.mp4" type="video/mp4">
 </audio>
 
 
 <div class="page">
 
-  <!-- HEADER -->
   <div class="header">
     <h1>FRIEND VOTE 2026</h1>
     <p>INTERNATIONAL FRIENDSHIP VOTING</p>
   </div>
 
 
-  <!-- VOTE INFORMATION -->
   <div class="info">
-    <strong>1 VOTE = 10 POINTS</strong>
-    <br>
-    Highest Voting Points will become TOP 1
+    <strong>1 VOTE = 10 POINTS</strong><br>
+    Highest Points will become TOP 1
   </div>
 
 
@@ -439,11 +475,10 @@ body{
   <div id="topOne"></div>
 
 
-  <!-- OTHER CONTESTANTS -->
+  <!-- CONTESTANTS -->
   <div id="contestants"></div>
 
 
-  <!-- BOTTOM -->
   <div class="bottom-box">
     Vote for your favourite friend
     <br>
@@ -453,90 +488,105 @@ body{
 
   <div class="footer">
     <h2>Vote Your Favourite Friend</h2>
-    <p>Friend Vote 2026</p>
   </div>
 
 
-  <!-- ADMIN LOCK ONLY -->
+  <!-- ADMIN LOCK -->
   <div class="admin-lock">
-    <button
-      class="lock-btn"
-      onclick="openAdmin()">
-      🔒
-    </button>
+    <button class="lock-btn" onclick="openAdmin()">🔒</button>
   </div>
 
 
   <!-- ADMIN PANEL -->
-  <div
-    class="admin-panel"
-    id="adminPanel">
+  <div class="admin-panel" id="adminPanel">
 
-    <input
-      type="password"
-      id="pin"
-      placeholder="PIN">
+    <div class="admin-title">
+      ADMIN PERMITS
+    </div>
 
-    <button
-      class="admin-btn"
-      onclick="loginAdmin()">
-      Enter
-    </button>
-
-
-    <div
-      class="editor"
-      id="editor">
-
-      <hr>
+    <!-- PIN -->
+    <div class="pin-box">
 
       <input
-        type="number"
-        id="number"
-        placeholder="Contestant Number">
-
-      <input
-        type="text"
-        id="city"
-        placeholder="City Name">
-
-      <input
-        type="text"
-        id="name"
-        placeholder="Contestant Name">
-
-      <input
-        type="number"
-        id="pointsInput"
-        placeholder="Points">
-
-
-      <!-- CHOOSE PHOTO FILE -->
-      <label class="file-label">
-
-        📁 Choose Contestant Photo
-
-        <input
-          type="file"
-          id="photoFile"
-          accept="image/*"
-          onchange="previewPhoto(event)">
-
-      </label>
-
-
-      <img
-        id="preview"
-        class="file-preview">
-
+        class="admin-input"
+        type="password"
+        id="pin"
+        placeholder="Enter Admin PIN">
 
       <button
         class="admin-btn"
-        onclick="saveContestant()">
-        Save Changes
+        onclick="loginAdmin()">
+        Login
       </button>
 
     </div>
+
+
+    <!-- EDITOR -->
+    <div class="editor" id="editor">
+
+      <hr>
+
+      <div class="admin-title">
+        Contestant Management
+      </div>
+
+      <div id="adminList"></div>
+
+
+      <!-- NEW CONTESTANT -->
+
+      <div class="new-box">
+
+        <div class="new-title">
+          ＋ NEW CONTESTANT
+        </div>
+
+        <input
+          class="admin-input"
+          type="text"
+          id="newCity"
+          placeholder="City Name">
+
+        <input
+          class="admin-input"
+          type="text"
+          id="newName"
+          placeholder="Contestant Name">
+
+        <input
+          class="admin-input"
+          type="number"
+          id="newPoints"
+          placeholder="Starting Points"
+          value="0">
+
+        <label class="file-label">
+
+          📷 Choose Contestant Photo
+
+          <input
+            type="file"
+            id="newPhoto"
+            accept="image/*"
+            onchange="previewNewPhoto(event)">
+
+        </label>
+
+        <img
+          id="newPreview"
+          class="preview">
+
+        <button
+          class="admin-btn green"
+          onclick="addContestant()">
+          ＋ Add Contestant
+        </button>
+
+      </div>
+
+    </div>
+
   </div>
 
 </div>
@@ -545,57 +595,55 @@ body{
 <script>
 
 /* =========================
-   CONTESTANTS
+   DEFAULT CONTESTANTS
 ========================= */
 
 let defaultContestants = [
 
   {
-    name:"Contestant 1",
     city:"SPAIN",
+    name:"Contestant 1",
     photo:"friend1.jpg",
     points:0
   },
 
   {
-    name:"Contestant 2",
     city:"SOUTH AFRICA",
+    name:"Contestant 2",
     photo:"friend2.jpg",
     points:0
   },
 
   {
-    name:"Contestant 3",
     city:"MYANMAR",
+    name:"Contestant 3",
     photo:"friend3.jpg",
     points:0
   },
 
   {
-    name:"Contestant 4",
     city:"THAILAND",
+    name:"Contestant 4",
     photo:"friend4.jpg",
     points:0
   },
 
   {
-    name:"Contestant 5",
     city:"PHILIPPINES",
+    name:"Contestant 5",
     photo:"friend5.jpg",
     points:0
   },
 
   {
-    name:"Contestant 6",
     city:"INDONESIA",
+    name:"Contestant 6",
     photo:"friend6.jpg",
     points:0
   }
 
 ];
 
-
-/* LOAD */
 
 let saved =
   localStorage.getItem("friendVote2026");
@@ -606,7 +654,9 @@ let contestants =
   : defaultContestants;
 
 
-/* SAVE */
+/* =========================
+   SAVE
+========================= */
 
 function saveData(){
 
@@ -618,12 +668,14 @@ function saveData(){
 }
 
 
-/* DISPLAY */
+/* =========================
+   DISPLAY
+========================= */
 
 function displayContestants(){
 
   contestants.sort(function(a,b){
-    return b.points-a.points;
+    return Number(b.points) - Number(a.points);
   });
 
   saveData();
@@ -635,18 +687,20 @@ function displayContestants(){
     document.getElementById("contestants");
 
 
-  if(contestants.length===0){
+  if(contestants.length === 0){
+
     topBox.innerHTML="";
     listBox.innerHTML="";
+
     return;
   }
 
 
   /* TOP 1 */
 
-  let top=contestants[0];
+  let top = contestants[0];
 
-  topBox.innerHTML=`
+  topBox.innerHTML = `
 
     <div class="top-card">
 
@@ -676,32 +730,30 @@ function displayContestants(){
           <button
             class="vote-btn"
             onclick="vote(0)">
-            Vote
+            VOTE
           </button>
 
           <div class="points">
-
-            ${top.points}
-
-            <span class="point-icon">Ⓟ</span>
-
+            ${top.points} Ⓟ
           </div>
 
         </div>
 
       </div>
+
     </div>
+
   `;
 
 
-  /* OTHER CONTESTANTS */
+  /* OTHER */
 
   listBox.innerHTML="";
 
 
   for(let i=1;i<contestants.length;i++){
 
-    let person=contestants[i];
+    let person = contestants[i];
 
     listBox.innerHTML += `
 
@@ -729,15 +781,11 @@ function displayContestants(){
             <button
               class="small-vote"
               onclick="vote(${i})">
-              Vote
+              VOTE
             </button>
 
             <div class="small-points">
-
-              ${person.points}
-
-              <span class="point-icon">Ⓟ</span>
-
+              ${person.points} Ⓟ
             </div>
 
           </div>
@@ -749,31 +797,46 @@ function displayContestants(){
         </div>
 
       </div>
+
     `;
+
   }
 
 }
 
 
-/* 1 VOTE = 10 POINTS */
+/* =========================
+   VOTE
+========================= */
 
 function vote(index){
 
-  contestants[index].points += 10;
+  contestants[index].points =
+    Number(contestants[index].points) + 10;
+
+  saveData();
 
   displayContestants();
+
+  if(
+    document.getElementById("editor").style.display === "block"
+  ){
+    renderAdmin();
+  }
 
 }
 
 
-/* ADMIN */
+/* =========================
+   ADMIN OPEN
+========================= */
 
 function openAdmin(){
 
   let panel =
     document.getElementById("adminPanel");
 
-  if(panel.style.display==="block"){
+  if(panel.style.display === "block"){
 
     panel.style.display="none";
 
@@ -786,16 +849,22 @@ function openAdmin(){
 }
 
 
+/* =========================
+   ADMIN LOGIN
+========================= */
+
 function loginAdmin(){
 
   let pin =
     document.getElementById("pin").value;
 
-  if(pin==="2013"){
+  if(pin === "2013"){
 
     document.getElementById(
       "editor"
     ).style.display="block";
+
+    renderAdmin();
 
   }else{
 
@@ -806,12 +875,100 @@ function loginAdmin(){
 }
 
 
-/* PHOTO FILE */
+/* =========================
+   ADMIN LIST
+========================= */
 
-let selectedPhotoData="";
+function renderAdmin(){
+
+  let box =
+    document.getElementById("adminList");
+
+  box.innerHTML="";
 
 
-function previewPhoto(event){
+  contestants.forEach(function(person,index){
+
+    box.innerHTML += `
+
+      <div class="admin-card">
+
+        <div class="admin-card-title">
+          Contestant ${index+1}
+        </div>
+
+        <img
+          class="admin-photo"
+          id="adminPreview${index}"
+          src="${person.photo}">
+
+
+        <label class="file-label">
+
+          📷 Change Photo
+
+          <input
+            type="file"
+            accept="image/*"
+            onchange="changePhoto(event,${index})">
+
+        </label>
+
+
+        <input
+          class="admin-input"
+          type="text"
+          id="city${index}"
+          value="${escapeHtml(person.city)}"
+          placeholder="City Name">
+
+
+        <input
+          class="admin-input"
+          type="text"
+          id="name${index}"
+          value="${escapeHtml(person.name)}"
+          placeholder="Contestant Name">
+
+
+        <input
+          class="admin-input"
+          type="number"
+          id="points${index}"
+          value="${person.points}"
+          placeholder="Points">
+
+
+        <div class="admin-actions">
+
+          <button
+            class="admin-btn"
+            onclick="saveContestant(${index})">
+            Save Changes
+          </button>
+
+          <button
+            class="admin-btn red"
+            onclick="deleteContestant(${index})">
+            Delete
+          </button>
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+
+/* =========================
+   CHANGE PHOTO
+========================= */
+
+function changePhoto(event,index){
 
   let file =
     event.target.files[0];
@@ -825,12 +982,136 @@ function previewPhoto(event){
 
   reader.onload=function(e){
 
-    selectedPhotoData=e.target.result;
+    contestants[index].photo =
+      e.target.result;
+
+    document.getElementById(
+      "adminPreview"+index
+    ).src=e.target.result;
+
+    saveData();
+
+  };
+
+  reader.readAsDataURL(file);
+
+}
+
+
+/* =========================
+   SAVE CONTESTANT
+========================= */
+
+function saveContestant(index){
+
+  let city =
+    document.getElementById(
+      "city"+index
+    ).value.trim();
+
+  let name =
+    document.getElementById(
+      "name"+index
+    ).value.trim();
+
+  let points =
+    document.getElementById(
+      "points"+index
+    ).value;
+
+
+  if(city !== ""){
+    contestants[index].city=city;
+  }
+
+  if(name !== ""){
+    contestants[index].name=name;
+  }
+
+  if(points !== ""){
+    contestants[index].points=
+      Number(points);
+  }
+
+
+  saveData();
+
+  displayContestants();
+
+  renderAdmin();
+
+  alert("Contestant saved!");
+
+}
+
+
+/* =========================
+   DELETE
+========================= */
+
+function deleteContestant(index){
+
+  if(contestants.length <= 1){
+
+    alert("At least 1 contestant is required.");
+
+    return;
+
+  }
+
+
+  let confirmDelete =
+    confirm(
+      "Delete this contestant?"
+    );
+
+  if(!confirmDelete){
+    return;
+  }
+
+
+  contestants.splice(index,1);
+
+  saveData();
+
+  displayContestants();
+
+  renderAdmin();
+
+}
+
+
+/* =========================
+   NEW CONTESTANT PHOTO
+========================= */
+
+let newPhotoData="";
+
+
+function previewNewPhoto(event){
+
+  let file =
+    event.target.files[0];
+
+  if(!file){
+    return;
+  }
+
+  let reader =
+    new FileReader();
+
+  reader.onload=function(e){
+
+    newPhotoData =
+      e.target.result;
 
     let preview =
-      document.getElementById("preview");
+      document.getElementById(
+        "newPreview"
+      );
 
-    preview.src=selectedPhotoData;
+    preview.src =
+      newPhotoData;
 
     preview.style.display="block";
 
@@ -841,95 +1122,142 @@ function previewPhoto(event){
 }
 
 
-/* ADMIN SAVE */
+/* =========================
+   ADD NEW CONTESTANT
+========================= */
 
-function saveContestant(){
+function addContestant(){
 
-  let number =
-    parseInt(
-      document.getElementById("number").value
-    )-1;
+  let city =
+    document.getElementById(
+      "newCity"
+    ).value.trim();
+
+  let name =
+    document.getElementById(
+      "newName"
+    ).value.trim();
+
+  let points =
+    document.getElementById(
+      "newPoints"
+    ).value;
 
 
-  if(
-    isNaN(number) ||
-    number<0 ||
-    number>=contestants.length
-  ){
+  if(city === "" || name === ""){
 
-    alert("Contestant not found");
+    alert(
+      "Please enter City and Contestant Name."
+    );
 
     return;
 
   }
 
 
-  let city =
-    document.getElementById("city").value;
+  contestants.push({
 
-  let name =
-    document.getElementById("name").value;
+    city:city,
 
-  let points =
-    document.getElementById("pointsInput").value;
+    name:name,
 
+    photo:
+      newPhotoData ||
+      "friend1.jpg",
 
-  if(city!==""){
-    contestants[number].city=city;
-  }
+    points:
+      points === ""
+      ? 0
+      : Number(points)
 
-  if(name!==""){
-    contestants[number].name=name;
-  }
-
-  if(points!==""){
-    contestants[number].points=parseInt(points);
-  }
-
-  if(selectedPhotoData!==""){
-    contestants[number].photo=selectedPhotoData;
-  }
+  });
 
 
   saveData();
 
   displayContestants();
 
-  alert("Saved successfully!");
+  renderAdmin();
+
+
+  /* CLEAR */
+
+  document.getElementById(
+    "newCity"
+  ).value="";
+
+  document.getElementById(
+    "newName"
+  ).value="";
+
+  document.getElementById(
+    "newPoints"
+  ).value="0";
+
+  document.getElementById(
+    "newPhoto"
+  ).value="";
+
+  document.getElementById(
+    "newPreview"
+  ).style.display="none";
+
+  newPhotoData="";
+
+
+  alert(
+    "New Contestant added successfully!"
+  );
 
 }
 
 
-/* MUSIC */
+/* =========================
+   SAFE TEXT
+========================= */
+
+function escapeHtml(text){
+
+  return String(text)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================
+   MUSIC
+========================= */
 
 let music =
   document.getElementById("music");
 
 
-/*
-  Try to start automatically.
-  Browser autoplay rules may block
-  sound until the user interacts.
-*/
+window.addEventListener(
+  "load",
+  function(){
 
-window.addEventListener("load",function(){
+    music.play().catch(
+      function(){}
+    );
 
-  music.play().catch(function(){});
+  }
+);
 
-});
-
-
-/*
-  If autoplay is blocked,
-  start after the first tap anywhere.
-*/
 
 document.addEventListener(
   "click",
   function(){
 
     if(music.paused){
-      music.play().catch(function(){});
+
+      music.play().catch(
+        function(){}
+      );
+
     }
 
   },
@@ -937,7 +1265,9 @@ document.addEventListener(
 );
 
 
-/* START */
+/* =========================
+   START
+========================= */
 
 displayContestants();
 
